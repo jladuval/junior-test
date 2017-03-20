@@ -11,3 +11,7 @@ Tasks:
 7. write tests for a `reduce` method
 8. implement the `reduce` method
 
+
+Assumptions:
+
+- when `map`, `filter` and `forEach` are called, they will be provided a function and array as the first and second arguments
