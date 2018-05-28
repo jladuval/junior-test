@@ -43,7 +43,6 @@
     "babel": "inherit"
   },
   "devDependencies": {
-    "@mishguru/package": "^3.3.0",
-    "ava": "^0.25.0"
+    "@mishguru/package": "^3.3.0"
   }
 }
