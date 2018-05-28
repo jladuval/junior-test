@@ -4,25 +4,46 @@
   "description": "junior test for mish guru",
   "main": "index.js",
   "scripts": {
-    "test": "ava *.spec.js",
-    "standard": "standard",
-    "fix": "standard --fix"
+    "build": "pkg-build",
+    "flow": "pkg-flow",
+    "lint": "pkg-lint",
+    "test": "NODE_ENV=test_local pkg-test",
+    "coverage": "NODE_ENV=test_local pkg-coverage",
+    "prepublish": "pkg-build",
+    "start": "node dist/server.js"
   },
   "author": "",
   "license": "UNLICENSED",
-  "dependencies": {
-    "ava": "^0.18.2",
-    "babel-core": "^6.24.0",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-es2015": "^6.24.0",
-    "babel-preset-stage-0": "^6.22.0",
-    "babel-register": "^6.24.0",
-    "standard": "^9.0.2"
+  "dependencies": {},
+  "babel": {
+    "presets": [
+      "flow",
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "transform-object-rest-spread",
+        {
+          "useBuiltIns": true
+        }
+      ]
+    ]
   },
   "ava": {
     "require": [
       "babel-register"
     ],
     "babel": "inherit"
+  },
+  "devDependencies": {
+    "@mishguru/package": "^3.3.0",
+    "ava": "^0.25.0"
   }
 }
